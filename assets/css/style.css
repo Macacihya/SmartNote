@@ -1,0 +1,807 @@
+/* assets/css/style.css - SmartNote theme v2 (Sesuai Desain Baru) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --green: #00c853;
+    --green-light: #e6f9ee;
+    --red: #ff7676;
+    --red-light: #ffeeee;
+    --blue: #0d6efd;
+    --blue-light: #e7f0ff;
+    --gray-bg: #fdfaf6;
+    /* Latar belakang krem */
+    --card: #fff;
+    --text-dark: #222;
+    --text-muted: #6c757d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background: var(--gray-bg);
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ========================================= */
+/* ==      TAMPILAN UTAMA APLIKASI        == */
+/* ========================================= */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 250px;
+    padding: 24px;
+    background: var(--card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    border-right: 1px solid #f0f0f0;
+    border: 1px solid #e0e0e0;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 10px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    background: var(--green-light);
+    color: var(--green);
+}
+
+.nav-links a.active {
+    background: var(--green);
+    color: #fff;
+}
+
+.nav-links a .bi {
+    font-size: 1.1rem;
+}
+
+.logout-btn {
+    background: var(--red-light);
+    border: 1px solid var(--red);
+    color: var(--red);
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+}
+
+.logout-btn:hover {
+    background: var(--red);
+    color: #fff;
+}
+
+/* --- Main Content --- */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+}
+
+/* --- Topbar --- */
+.topbar {
+    background: transparent;
+    padding: 0 0 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar .search-wrapper {
+    width: 350px;
+}
+
+.topbar .search-wrapper .bi {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.topbar .search-wrapper .form-control {
+    border-radius: 12px;
+    padding: 10px 16px 10px 45px;
+    /* Kiri 45px untuk ikon */
+    background: var(--card);
+    border: 1px solid #e0e0e0;
+}
+
+/* --- Area Konten --- */
+.content-wrapper {
+    flex: 1;
+}
+
+/* --- Kartu Highlight --- */
+.highlight-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #f0f0f0;
+    /* Hapus border hijau, ganti dgn yg tipis */
+    box-shadow: 6px 6px 0 0 var(--green);
+    /* Bayangan hijau di kanan-bawah */
+}
+
+.highlight-card h6 {
+    font-weight: 600;
+}
+
+.highlight-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.btn-view-highlight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--green-light);
+    color: var(--green);
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+.btn-view-highlight:hover {
+    background: var(--green);
+    color: #fff;
+}
+
+/* --- Kartu Tabel --- */
+.table-wrapper-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e0e0e0;
+}
+
+.table-toolbar {
+    display: flex;
+    justify-content: space-between;
+    /* <-- DIUBAH KE SINI */
+    align-items: center;
+    margin-bottom: 16px;
+    background: var(--green);
+    padding: 12px 16px;
+    border-radius: 10px;
+}
+
+/* Style untuk dropdown di dalam toolbar hijau */
+.table-toolbar .form-select-sm {
+    background-color: #fff;
+    /* DIGANTI: Latar belakang putih solid */
+    color: var(--text-dark);
+    /* DIGANTI: Teks gelap */
+    border-color: #ddd;
+    /* DIGANTI: Border abu-abu tipis */
+}
+
+.table-toolbar .form-select-sm option {
+    color: var(--text-dark);
+    /* Agar teks option tetap gelap */
+}
+
+.table-toolbar .form-select-sm:focus {
+    border-color: var(--green);
+    /* DIGANTI: Fokus warna hijau */
+    box-shadow: 0 0 0 0.25rem rgba(0, 200, 83, 0.2);
+    /* DIGANTI: Fokus bayangan hijau */
+}
+
+/* Style untuk search input di dalam toolbar hijau */
+.table-toolbar .search-table-wrapper .form-control-sm {
+    background-color: rgb(255, 255, 255);
+    /* Latar belakang transparan putih */
+    color: var(--text-dark);
+    /* Teks gelap */
+    border-color: transparent;
+    /* Hilangkan border */
+}
+
+.table-toolbar .search-table-wrapper .form-control-sm::placeholder {
+    color: var(--text-muted);
+    /* Placeholder gelap */
+}
+
+.table-toolbar .search-table-wrapper .bi {
+    color: var(--text-muted);
+    /* Ikon search gelap */
+}
+
+.table-toolbar .search-table-wrapper {
+    width: 250px;
+}
+
+.table-toolbar .search-table-wrapper .bi {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.table-toolbar .form-control-sm {
+    font-size: 13px;
+    padding-left: 30px;
+    border-radius: 8px;
+}
+
+.table-toolbar .form-select-sm {
+    font-size: 13px;
+    border-radius: 8px;
+}
+
+/* --- Tabel --- */
+.table {
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    /* Jarak antar baris */
+}
+
+.table thead th {
+    background: transparent;
+    color: var(--text-muted);
+    border: 0;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 8px 12px;
+}
+
+.table tbody tr {
+    background: #fcfcfc;
+    border-radius: 8px;
+}
+
+.table tbody td {
+    padding: 12px;
+    vertical-align: middle;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Membuat sudut bulat untuk sel pertama dan terakhir */
+.table tbody tr td:first-child {
+    border-left: 1px solid #f0f0f0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.table tbody tr td:last-child {
+    border-right: 1px solid #f0f0f0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.table .badge {
+    font-weight: 500;
+    padding: 5px 8px;
+}
+
+.peserta-avatars img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-left: -10px;
+}
+
+.peserta-avatars img:first-child {
+    margin-left: 0;
+}
+
+/* --- Tombol Aksi Tabel --- */
+.aksi-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.aksi-btn.btn-view {
+    background: var(--blue-light);
+    color: var(--blue);
+}
+
+.aksi-btn.btn-view:hover {
+    background: var(--blue);
+    color: #fff;
+}
+
+.aksi-btn.btn-edit {
+    background: var(--green-light);
+    color: var(--green);
+}
+
+.aksi-btn.btn-edit:hover {
+    background: var(--green);
+    color: #fff;
+}
+
+.aksi-btn.btn-delete {
+    background: var(--red-light);
+    color: var(--red);
+}
+
+.aksi-btn.btn-delete:hover {
+    background: var(--red);
+    color: #fff;
+}
+
+.aksi-btn.btn-download {
+    background: #f0f0f0;
+    color: #555;
+}
+
+.aksi-btn.btn-download:hover {
+    background: #ddd;
+    color: #222;
+}
+
+/* --- Pagination --- */
+.pagination-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    font-size: 13px;
+}
+
+.pagination .page-link {
+    border: 0;
+    border-radius: 6px !important;
+    margin: 0 2px;
+    color: var(--text-muted);
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--green);
+    color: #fff;
+}
+
+/* --- CSS BARU UNTUK TOGGLE SIDEBAR MOBILE --- */
+.mobile-toggle-btn {
+    font-size: 2rem;
+    color: var(--green);
+    padding: 0 10px 0 0;
+    /* Memberi jarak */
+}
+
+.mobile-toggle-btn:hover {
+    color: var(--green-600);
+}
+
+.sidebar-overlay {
+    display: none;
+    /* Sembunyi secara default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    /* Di bawah sidebar */
+}
+
+.sidebar-overlay.active {
+    display: block;
+    /* Tampil saat sidebar aktif */
+}
+
+/* --- AKHIR CSS BARU --- */
+
+/* ========================================= */
+/* ==       HALAMAN LOGIN & REGISTER      == */
+/* =Tinggalkan ini apa adanya== */
+/* ========================================= */
+
+body[data-page="login"],
+body[data-page="register"] {
+    background: #fdfaf6;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.auth-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .auth-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.auth-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 1rem;
+}
+
+.auth-sidebar h1 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.auth-sidebar .text-green {
+    color: var(--green);
+}
+
+.auth-sidebar .lead {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 1rem;
+}
+
+.auth-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: none;
+    box-shadow: 8px 8px 0 0 var(--green), 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.auth-card h3 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.auth-card .form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.auth-card .form-control,
+.auth-card .form-select {
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    box-shadow: none !important;
+}
+
+.auth-card .form-control:focus,
+.auth-card .form-select:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(0, 200, 83, 0.2) !important;
+}
+
+.auth-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.auth-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.auth-footer a {
+    color: var(--green);
+    font-weight: 600;
+}
+
+.auth-footer .btn-green {
+    width: auto;
+    padding: 0.5rem 1.5rem;
+}
+
+/* Styling dasar untuk tombol hijau */
+.btn-green {
+    background-color: var(--green);
+    color: #fff;
+    padding: 8px 16px;
+    /* Sesuaikan padding jika perlu */
+    border-radius: 8px;
+    /* Sesuaikan radius jika perlu */
+    border: none;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    /* Transisi halus */
+    cursor: pointer;
+}
+
+/* --- EFEK HOVER BARU --- */
+.btn-green:hover {
+    background-color: #00a944;
+    /* Warna hijau sedikit lebih gelap */
+    transform: translateY(-2px);
+    /* Efek sedikit terangkat */
+    box-shadow: 0 4px 10px rgba(0, 200, 83, 0.3);
+    /* Bayangan hijau halus */
+}
+
+/* ========================================= */
+/* ==           RESPONSIVE (Mobile)       == */
+/* ========================================= */
+@media (max-width: 991.98px) {
+    /* Cocokkan dengan breakpoint -lg- */
+
+    /* 1. Atur sidebar agar tersembunyi di luar layar */
+    .app>.sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 1050;
+        /* Di atas overlay */
+        transform: translateX(-100%);
+        /* Sembunyi ke kiri */
+        transition: transform 0.3s ease-in-out;
+        width: 280px;
+        /* Sedikit lebih lebar untuk mobile */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 2. Tampilkan sidebar saat .active */
+    .app>.sidebar.active {
+        transform: translateX(0);
+        /* Muncul ke layar */
+    }
+
+    /* 3. Atur padding main content */
+    .main {
+        padding: 12px;
+    }
+
+    /* 4. Atur layout topbar agar rapi */
+    .topbar {
+        flex-wrap: nowrap;
+        gap: 0;
+    }
+
+    .topbar .search-wrapper {
+        flex-grow: 1;
+        margin: 0 10px;
+        width: auto;
+    }
+
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        /* Untuk scrolling halus di iOS */
+    }
+}
+
+/* ========================================= */
+/* ==       DROPDOWN NOTIFIKASI         == */
+/* ========================================= */
+
+.notification-dropdown {
+    width: 320px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
+}
+
+.notification-dropdown .dropdown-header {
+    font-weight: 600;
+}
+
+.notification-dropdown .dropdown-item {
+    padding: 10px 15px;
+    white-space: normal;
+    /* Agar teks bisa wrap */
+    border-bottom: 1px solid #f7f7f7;
+}
+
+.notification-dropdown .dropdown-item:last-child {
+    border-bottom: 0;
+}
+
+.notification-dropdown .dropdown-item.unread small {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.notification-dropdown .dropdown-item.read small {
+    color: var(--text-muted);
+}
+
+.topbar .d-flex .dropdown .bi-bell {
+    color: var(--text-dark);
+    /* Menggunakan variabel warna teks gelap */
+}
+
+/* ========================================= */
+/* ==      MODAL KONFIRMASI KUSTOM        == */
+/* ========================================= */
+
+.custom-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1060;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.custom-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: #fff;
+    border-radius: 16px;
+    padding: 2.5rem;
+    z-index: 1061;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Status Aktif */
+.custom-modal-overlay.active,
+.custom-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.custom-modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.custom-modal-title {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.custom-modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.custom-modal-buttons button {
+    border: none;
+    padding: 0.75rem 2.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.custom-modal-buttons button:hover {
+    transform: scale(1.05);
+}
+
+.btn-modal-no {
+    background-color: var(--red-light);
+    color: var(--red);
+    border: 1px solid var(--red);
+}
+
+.btn-modal-yes {
+    background-color: var(--green);
+    color: #fff;
+}
+
+/* ========================================= */
+/* ==       AUTOCOMPLETE SEARCH SUGGESTIONS == */
+/* ========================================= */
+
+.search-wrapper {
+    /* Pastikan relative agar suggestion bisa absolute */
+    position: relative;
+}
+
+.search-suggestions-container {
+    display: none;
+    /* Sembunyi secara default */
+    position: absolute;
+    top: 100%;
+    /* Muncul tepat di bawah input */
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-top: none;
+    /* Hapus border atas karena menempel input */
+    border-radius: 0 0 12px 12px;
+    /* Bulat hanya di bawah */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+    max-height: 250px;
+    /* Batasi tinggi jika sugesti banyak */
+    overflow-y: auto;
+    /* Aktifkan scroll jika perlu */
+    z-index: 1000;
+    /* Pastikan muncul di atas elemen lain */
+}
+
+.search-suggestions-container.active {
+    display: block;
+    /* Tampilkan saat ada sugesti */
+}
+
+.suggestion-item {
+    display: block;
+    padding: 10px 16px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #f7f7f7;
+    white-space: nowrap;
+    /* Cegah teks wrap */
+    overflow: hidden;
+    /* Sembunyikan teks yg terlalu panjang */
+    text-overflow: ellipsis;
+    /* Tampilkan ... jika terlalu panjang */
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+    /* Hapus border untuk item terakhir */
+}
+
+.suggestion-item:hover {
+    background-color: var(--green-light);
+    color: var(--green);
+}
+
+.suggestion-item strong {
+    /* Untuk highlight teks yang cocok */
+    font-weight: 600;
+}
