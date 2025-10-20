@@ -15,7 +15,7 @@ include 'inc/navbar.php';
 // 1. Ambil nilai limit dari URL, default ke 6
 $limit = isset($_GET['limit']) ? (int) $_GET['limit'] : 6;
 if (!in_array($limit, [6, 10, 20])) {
-    $limit = 6;
+    $limit = 1;
 }
 
 // 2. Ambil halaman saat ini dari URL, default ke 1
@@ -73,7 +73,7 @@ $stmt_highlight = $conn->query("SELECT id, judul, isi, tanggal FROM notulen ORDE
   <div class="table-toolbar">
     <div class="d-flex align-items-center gap-2">
       <select class="form-select form-select-sm" style="width: 70px;" id="limit-select">
-        <option value="6" <?= ($limit == 6) ? 'selected' : '' ?>>6</option>
+        <option value="6" <?= ($limit == 1) ? 'selected' : '' ?>>1</option>
         <option value="10" <?= ($limit == 10) ? 'selected' : '' ?>>10</option>
         <option value="20" <?= ($limit == 20) ? 'selected' : '' ?>>20</option>
       </select>
@@ -101,7 +101,7 @@ $stmt_highlight = $conn->query("SELECT id, judul, isi, tanggal FROM notulen ORDE
         $sql_table = "SELECT n.id, n.judul, n.isi, n.tanggal, n.file_path, n.penulis_id, u.name as penulis
                       FROM notulen n
                       JOIN users u ON n.penulis_id = u.id
-                      ORDER BY n.tanggal DESC
+                      ORDER BY n.id DESC
                       LIMIT ? OFFSET ?";
         $stmt_table = $conn->prepare($sql_table);
         $result_table = null; // Inisialisasi
@@ -153,7 +153,7 @@ $stmt_highlight = $conn->query("SELECT id, judul, isi, tanggal FROM notulen ORDE
       <?php
         endif; // Akhir dari if ($result_table ...)
         // Bebaskan memori result set
-         if(isset($result_table) && is_object($result_table)) $result_table->free();
+        if(isset($result_table) && is_object($result_table)) $result_table->free();
         ?>
       </tbody>
     </table>

@@ -1,18 +1,17 @@
 <?php
 require_once 'backend/config.php';
-// Pastikan user sudah login, jika belum, arahkan ke halaman login
+// Pastikan user sudah login
 if (!isset($_SESSION['user'])) {
     header('Location: login.php');
     exit;
 }
 
-// Set variabel untuk header
 $page_title='Profile';
-$page_slug='profile'; // Digunakan untuk styling body jika ada CSS khusus
+$page_slug='profile'; // Untuk styling body jika diperlukan
 include 'inc/header.php'; // Muat header HTML
 include 'inc/navbar.php'; // Muat sidebar dan topbar
 
-// Tentukan base_path untuk script JS lokal (karena file ini ada di root)
+// Tentukan base_path untuk script JS lokal
 $base_path = './';
 ?>
 
@@ -33,10 +32,11 @@ $base_path = './';
             </span>
         </div>
     </div>
-    <hr> 
-    <div class="mt-3 text-end">
+
+    <hr>
+    <div class="mt-3 text-end d-flex justify-content-end gap-2">
         <a href="edit_profile.php" class="btn btn-sm btn-green"><i class="bi bi-pencil me-1"></i> Edit Profil</a>
-    </div> 
+    
     </div>
     </div>
 <?php

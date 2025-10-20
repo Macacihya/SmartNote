@@ -83,6 +83,21 @@ if (isset($conn) && isset($_SESSION['user']['id'])) {
           <i class="bi bi-file-earmark-plus me-2"></i> Notulen
         </a>
         <?php endif; ?>
+
+          <?php // Tampilkan link Kelola Pengguna hanya untuk Admin
+        if(isset($_SESSION['user']['role']) && $_SESSION['user']['role'] === 'admin'): ?>
+        <a href="<?= $base ?>manage_users.php" class="nav-link <?= ($active_page == 'manage_users') ? 'active' : ''; ?>">
+          <i class="bi bi-people me-2"></i> Kelola Pengguna
+        </a>
+        <?php endif; ?>
+
+        <?php // Tampilkan link Tambah Pengguna hanya untuk Admin
+        if(isset($_SESSION['user']['role']) && $_SESSION['user']['role'] === 'admin'): ?>
+        <a href="<?= $base ?>add_user.php" class="nav-link <?= ($active_page == 'add_user') ? 'active' : ''; ?>">
+          <i class="bi bi-person-plus me-2"></i> Tambah Pengguna
+        </a>
+        <?php endif; ?>
+
         <a href="<?= $base ?>profile.php" class="nav-link <?= ($active_page == 'profile') ? 'active' : ''; ?>">
           <i class="bi bi-person me-2"></i> Profile
         </a>
@@ -151,7 +166,7 @@ if (isset($conn) && isset($_SESSION['user']['id'])) {
       // Cek apakah path foto ada di session dan file nya ada di server
       $profilePic = (isset($_SESSION['user']['profile_picture_path']) && file_exists($base . $_SESSION['user']['profile_picture_path'])) 
                     ? $base . htmlspecialchars($_SESSION['user']['profile_picture_path']) 
-                    : 'https://i.pravatar.cc/100'; // Fallback ke placeholder
+                    : 'foto/people.png'; // Fallback ke placeholder
     ?>
     <img src="<?= $profilePic ?>" 
         width="44" height="44" 

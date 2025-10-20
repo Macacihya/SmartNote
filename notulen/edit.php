@@ -69,9 +69,9 @@ $base_path = '../';
         <hr>
         
         <div class="mt-3 d-flex gap-2 justify-content-end">
-             <a href="detail.php?id=<?= $data['id'] ?>" class="btn btn-sm btn-outline">Kembali</a>
-             
-             <button type="submit" class="btn btn-sm btn-green"><i class="bi bi-save me-1"></i> Simpan Perubahan</button>
+            <a href="detail.php?id=<?= $data['id'] ?>" class="btn btn-sm btn-outline">Kembali</a>
+            
+            <button type="submit" class="btn btn-sm btn-green"><i class="bi bi-save me-1"></i> Simpan Perubahan</button>
         </div>
         </form>
     </div>
