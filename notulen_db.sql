@@ -36,11 +36,12 @@ CREATE TABLE IF NOT EXISTS notifications (
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS notulen_users (
-    id INT(11) NOT NULL AUTO_INCREMENT,
-    notulen_id INT(11) NOT NULL,
-    user_id INT(11) NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (notulen_id) REFERENCES notulen(notulen_id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  notulen_id INT NOT NULL,
+  user_id INT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (notulen_id) REFERENCES notulen(id) ON DELETE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+  UNIQUE KEY notulen_user_pair (notulen_id, user_id)
+) ENGINE=InnoDB;
 -- AKHIR TABEL BARU --
