@@ -18,7 +18,11 @@
 
     .hero-bg {
         /* Warna gradient Hero Section (Biru ke Hijau) */
+<<<<<<< HEAD
         background: linear-gradient(135deg, #00d462 0%, #00a6ffff 100%);
+=======
+        background: linear-gradient(135deg, #007bff 0%, #00d462 100%);
+>>>>>>> dc2ea7d11e6aa51bf0ac905d4634bfc3421bd8e4
     }
 
     /* WARNA TEXT GRADIENT (Biru-Hijau) */
@@ -26,7 +30,11 @@
         background-image: linear-gradient(135deg, #007bff 0%, #00d462 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+<<<<<<< HEAD
         background-clip: text;  
+=======
+        background-clip: text;
+>>>>>>> dc2ea7d11e6aa51bf0ac905d4634bfc3421bd8e4
         text-fill-color: transparent;
     }
 
@@ -203,6 +211,7 @@
                 
                 <div class="col-md-4">
                     <div class="card p-3 shadow-sm h-100 border-0">
+<<<<<<< HEAD
                         <div class="placeholder-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-image-src="./foto/tambah-notulen.png" data-image-title="Perekaman Real-time SmartNote">
                             <img src="./foto/tambah-notulen.png" alt="Perekaman Real-time" class="img-fluid">
                         </div>
@@ -210,26 +219,52 @@
                         <p class="card-text text-muted">Input Data Lengkap: Catat notulen baru dengan mudah dengan mengisi Judul, Tanggal Rapat, dan isi lengkap notulen.
 
 Dukungan Lampiran: Sertakan file pendukung rapat (opsional) dengan fitur upload file untuk memastikan semua materi terkait tersimpan di satu tempat.</p>
+=======
+                        <div class="placeholder-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-image-src="https://via.placeholder.com/1200x800/007bff/FFFFFF?text=SCREENSHOT+Perekaman+Real-time" data-image-title="Perekaman Real-time SmartNote">
+                            <img src="https://via.placeholder.com/600x400/007bff/FFFFFF?text=Perekaman" alt="Perekaman Real-time" class="img-fluid">
+                        </div>
+                        <h5 class="card-title mt-2">Perekaman Real-time</h5>
+                        <p class="card-text text-muted">Rekam ucapan dalam rapat dan ubah menjadi teks secara instan,
+                            memastikan tidak ada poin yang terlewat.</p>
+>>>>>>> dc2ea7d11e6aa51bf0ac905d4634bfc3421bd8e4
                     </div>
                 </div>
                 
                 <div class="col-md-4">
                     <div class="card p-3 shadow-sm h-100 border-0">
+<<<<<<< HEAD
                         <div class="placeholder-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-image-src="./foto/hasil.png" data-image-title="Struktur Otomatis SmartNote">
                             <img src="./foto/hasil.png" alt="Struktur Otomatis" class="img-fluid">
                         </div>
                         <h5 class="card-title mt-2">Hasil Upload Notulen</h5>
                         <p class="card-text text-muted">Dashboard SmartNote adalah pusat kendali bagi notulis. Halaman ini menampilkan ringkasan 3 notulen terbaru dan tabel lengkap semua notulen yang dibuat. Notulis dapat dengan mudah mencari, melihat detail, mengedit, atau menghapus notulen langsung dari daftar.</p>
+=======
+                        <div class="placeholder-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-image-src="https://via.placeholder.com/1200x800/00d462/FFFFFF?text=SCREENSHOT+Struktur+Otomatis" data-image-title="Struktur Otomatis SmartNote">
+                            <img src="https://via.placeholder.com/600x400/00d462/FFFFFF?text=Struktur" alt="Struktur Otomatis" class="img-fluid">
+                        </div>
+                        <h5 class="card-title mt-2">Struktur Otomatis</h5>
+                        <p class="card-text text-muted">Secara otomatis mengelompokkan hasil notulen berdasarkan topik,
+                            keputusan, dan poin tindakan (Action Items).</p>
+>>>>>>> dc2ea7d11e6aa51bf0ac905d4634bfc3421bd8e4
                     </div>
                 </div>
                 
                 <div class="col-md-4">
                     <div class="card p-3 shadow-sm h-100 border-0">
+<<<<<<< HEAD
                         <div class="placeholder-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-image-src="./foto/edit-notulen.png" data-image-title="Distribusi Instan SmartNote">
                             <img src="./foto/edit-notulen.png" alt="Distribusi Instan" class="img-fluid">
                         </div>
                         <h5 class="card-title mt-2">Fitur Edit Notulen</h5>
                         <p class="card-text text-muted">Fitur Edit Notulen adalah halaman detail notulen yang dilengkapi tombol Edit (hijau). Fitur ini memungkinkan notulis untuk merevisi atau menambahkan konten pada notulen yang sudah ada. Terdapat juga tombol Hapus untuk menghapus notulen dan ikon unduh untuk mengakses lampiran rapat.</p>
+=======
+                        <div class="placeholder-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-image-src="https://via.placeholder.com/1200x800/ffc107/333333?text=SCREENSHOT+Distribusi+Instan" data-image-title="Distribusi Instan SmartNote">
+                            <img src="https://via.placeholder.com/600x400/ffc107/333333?text=Distribusi" alt="Distribusi Instan" class="img-fluid">
+                        </div>
+                        <h5 class="card-title mt-2">Distribusi Instan</h5>
+                        <p class="card-text text-muted">Bagikan hasil notulen rapat ke seluruh peserta atau pemangku
+                            kepentingan segera setelah rapat selesai.</p>
+>>>>>>> dc2ea7d11e6aa51bf0ac905d4634bfc3421bd8e4
                     </div>
                 </div>
                 
